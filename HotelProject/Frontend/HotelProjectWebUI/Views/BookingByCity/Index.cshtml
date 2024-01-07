@@ -1,0 +1,34 @@
+﻿
+@model List<HotelListViewModel.Result>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>Hotel Ara</h1>
+<hr />
+<form method="get">
+    <input class="form-control" type="text" name="search"/>
+    <button type="submit" class="btn btn-primary my-3">Ara</button>
+</form>
+
+<table class="table table-striped mt-3">
+    <tr>
+        <th>#</th>
+        <th>Otel Adı</th>
+        <th>Otel Puanı</th>
+        <th>Otel Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count += 1;
+        <tr>
+            <td>@count</td>
+            <td>@item.name</td>
+            <td>@item.reviewScore</td>
+            <td><a href="#" class="btn btn-dark">Detaylar</a></td>
+        </tr>
+    }
+</table>

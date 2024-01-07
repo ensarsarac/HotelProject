@@ -1,0 +1,65 @@
+﻿
+@model List<ResultBookingDto>
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="active-member">
+                    <div class="table-responsive">
+                        <table class="table table-xs mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Ad Soyad</th>
+                                    <th>Email</th>
+                                    <th>Giriş Tarihi</th>
+                                    <th>Çıkış Tarihi</th>
+                                    <th>Oda</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>
+                                            @item.Mail
+                                        </td>
+                                        <td>
+                                            @item.CheckIn
+                                        </td>
+                                        <td>@item.CheckOut</td>
+                                        <td>
+                                            @item.Room.Title
+                                        </td>
+                                        <td>
+                                            @if (item.Status == "Onay Bekliyor")
+                                            {
+                                                <span class="badge badge-primary">@item.Status</span>
+                                            }
+                                            else if (item.Status == "İptal Edildi")
+                                            {
+                                                <span class="badge badge-danger">@item.Status</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-success">@item.Status</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

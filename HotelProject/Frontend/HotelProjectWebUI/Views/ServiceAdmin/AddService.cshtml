@@ -1,0 +1,36 @@
+﻿
+
+@model CreateServiceDto
+
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Yeni Hizmet Ekle</h4>
+        <div class="basic-form">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.ServiceIcon"></label>
+                    <input type="text" asp-for="@Model.ServiceIcon" class="form-control input-default">
+                    <span asp-validation-for="@Model.ServiceIcon" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Title"></label>
+                    <input type="text" asp-for="@Model.Title" class="form-control input-default">
+                    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Description"></label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.Description">
+                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                </div> 
+                <button type="submit" class="btn btn-primary">Hizmeti Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+﻿
+@model UpdateGuestDto
+
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Misafir Güncelle</h4>
+        <div class="basic-form">
+            <form method="post">
+                <input type="hidden" asp-for="@Model.GuestID" />
+                <div class="form-group">
+                    <label class="form-label">Ad</label>
+                    <input type="text" asp-for="@Model.Name" class="form-control input-default">
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Soyad</label>
+                    <input type="text" asp-for="@Model.Surname" class="form-control input-default">
+                    @Html.ValidationMessageFor(x => x.Surname, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="form-label"></label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.City">
+                    @Html.ValidationMessageFor(x => x.City, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

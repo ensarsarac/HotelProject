@@ -1,0 +1,36 @@
+﻿
+@model UpdateServiceDto
+
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Hizmet Güncelle</h4>
+        <div class="basic-form">
+            <form method="post">
+                <input type="hidden" asp-for="@Model.ServiceID" />
+                <div class="form-group">
+                    <label class="form-label">Ikon</label>
+                    <input type="text" asp-for="@Model.ServiceIcon" class="form-control input-default">
+                    <span asp-validation-for="@Model.ServiceIcon" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Hizmet Başlığı</label>
+                    <input type="text" asp-for="@Model.Title" class="form-control input-default">
+                    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Hizmet Açıklaması</label>
+                    <input type="text" asp-for="@Model.Description" class="form-control input-default">
+                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Hizmeti Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

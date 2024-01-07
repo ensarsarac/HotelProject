@@ -1,0 +1,64 @@
+﻿
+@model List<ResultRoomDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Odalar</h3>
+<hr />
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>#</th>
+        <th>Resim</th>
+        <th>Oda Numarası</th>
+        <th>Oda Tipi</th>
+        <th>Fiyat</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RoomID</td>
+            <td><img src="~/hotel-html-template/img/@item.CoverImage" class="img-thumbnail" style="width:100px;height:90px;" /></td>
+            <td>@item.RoomNumber</td>
+            <td>@item.Title</td>
+            <td>@item.Price</td>
+            <td><a href="/RoomAdmin/DeleteRoom/@item.RoomID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/RoomAdmin/UpdateRoom/@item.RoomID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="#" data-toggle="modal" data-target="#Modal1-@item.RoomID" class="btn btn-dark">Detaylar</a></td>
+        </tr>
+        <div class="modal" id="Modal1-@item.RoomID" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Oda Bilgileri</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <p>Kapak Resim : <img src="~/hotel-html-template/img/@item.CoverImage" class="img-thumbnail" style="width:100px;height:90px;" /></p>
+                        <p>ID Numarası : @item.RoomID</p>
+                        <p>Oda Numarası : @item.RoomNumber</p>
+                        <p>Oda Başlığı : @item.Title</p>
+                        <p>Oda Fiyatı : @item.Price</p>
+                        <p>Yatak Sayısı : @item.BedCount</p>
+                        <p>Banyo Sayısı : @item.BathCount</p>
+                        <p>Detaylı Açıklama : @item.Description</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</table>
+
+<a href="/RoomAdmin/AddRoom/" class="btn btn-primary">Yeni Oda Ekle</a>

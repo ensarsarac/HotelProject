@@ -1,0 +1,51 @@
+﻿
+@model List<TestimonialViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <h4>Referans Listesi</h4>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Referans Görsel</th>
+                        <th>Referans Adı</th>
+                        <th>Referans Ünvanı</th>
+                        <th>Açıklama</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.TestimonialID</th>
+                            <th><img src="~/hotel-html-template/img/@item.Image" style="width:75px; height:75px;" class="rounded-pill" /></th>
+                            <td>@item.Name</td>
+                            <td>@item.Title</td>
+                            <td>@item.Title</td>
+                            <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                            <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-rounded btn-outline-success">Güncelle</a></td>
+
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="/Testimonial/AddTestimonal/" class="btn btn-rounded btn-outline-info">Yeni Referans Ekle</a>

@@ -1,0 +1,15 @@
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\bin\Debug\net5.0\HotelProjectEntityLayer.deps.json
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\bin\Debug\net5.0\HotelProjectEntityLayer.runtimeconfig.json
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\bin\Debug\net5.0\HotelProjectEntityLayer.runtimeconfig.dev.json
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\bin\Debug\net5.0\HotelProjectEntityLayer.dll
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\bin\Debug\net5.0\ref\HotelProjectEntityLayer.dll
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\bin\Debug\net5.0\HotelProjectEntityLayer.pdb
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.csproj.AssemblyReference.cache
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.AssemblyInfoInputs.cache
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.AssemblyInfo.cs
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.csproj.CoreCompileInputs.cache
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.dll
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\ref\HotelProjectEntityLayer.dll
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.pdb
+D:\Belgeler\source\repos\HotelProject\ApiConsume\HotelProjectEntityLayer\obj\Debug\net5.0\HotelProjectEntityLayer.genruntimeconfig.cache

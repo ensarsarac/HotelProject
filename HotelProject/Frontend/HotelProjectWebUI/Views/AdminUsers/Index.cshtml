@@ -1,0 +1,48 @@
+﻿
+@model List<ResultAppUserDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
+}
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4>Kullanıcı Listesi</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Ad Soyad</th>
+                                                <th>Şehir</th>
+                                                <th>Lokasyon</th>
+                                                <th>Lokasyon İl</th>
+                                                <th>Sil</th>
+                                                <th>Güncelle</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                i += 1;
+                                                <tr>
+                                                    <td><img class="rounded-circle" style="width:50px;height:50px;" src="~/images/@item.ImageUrl"/>  @item.Name @item.Surname</td>
+                                                    <td>@item.City</td>
+                                                    <td>@item.WorkLocation.WorkLocationName</td>
+                                                    <td>@item.WorkLocation.WorkLocationCity</td>
+                                                    <td><a href="#" class="btn btn-danger">Sil</a></td>
+                                                    <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>

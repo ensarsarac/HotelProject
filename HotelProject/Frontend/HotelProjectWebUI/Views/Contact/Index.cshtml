@@ -1,0 +1,105 @@
+﻿
+
+@model CreateContactDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+
+<div class="container-xxl bg-white p-0">
+
+    @section Banner{<div class="container-fluid page-header mb-5 p-0" style="background-image: url(/hotel-html-template/img/carousel-1.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center pb-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">İLETİŞİM</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="/Default/Index/">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">İLETİŞİM</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div> }
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title text-center text-primary text-uppercase">BİZE ULAŞIN</h6>
+                <h1 class="mb-5"><span class="text-primary text-uppercase">TÜM SORULARINIZ İÇİN</span> BİZE YAZABİLİRSİNİZ</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="row gy-4">
+                        <div class="col-md-4">
+                            <h6 class="section-title text-start text-primary text-uppercase">Rezervasyon</h6>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>hotelapi@example.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="section-title text-start text-primary text-uppercase">Genel Sorularınız</h6>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>hotelapi@example.com</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="section-title text-start text-primary text-uppercase">İş başvurusu</h6>
+                            <p><i class="fa fa-envelope-open text-primary me-2"></i>hotelapiik@example.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    @*<iframe class="position-relative rounded w-100 h-100"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                            frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></iframe>*@
+                    <iframe class="position-relative rounded w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2266.6267684605405!2d31.991954010560296!3d36.54219244374804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dca3706ae24ad1%3A0x6a752559abb79f22!2sCleopatra%20Beach!5e0!3m2!1str!2str!4v1704117878864!5m2!1str!2str" style="min-height: 350px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="wow fadeInUp" data-wow-delay="0.2s">
+                        <form method="post">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="Name" id="name" placeholder="Adınız">
+                                        <label for="name">Adınız</label>
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" name="Mail" id="email" placeholder="Mail Adresiniz">
+                                        <label for="email">Mail Adresiniz</label>
+                                        <span asp-validation-for="Mail" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="Subject" id="subject" placeholder="Konu">
+                                        <label for="subject">Konu</label>
+                                        <span asp-validation-for="Subject" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        @Html.DropDownListFor(x=>x.MessageCategoryID,(SelectList)ViewBag.categoryList,"Kategori Seçiniz..",new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Bir mesaj bırakın.." name="Message" id="message" style="height: 150px"></textarea>
+                                        <label for="message">Bir mesaj bırakın..</label>
+                                        <span asp-validation-for="Message" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Mesaj Gönder</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

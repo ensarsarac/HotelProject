@@ -1,0 +1,20 @@
+﻿
+@model SearchLocationViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Lokasyon Ara</h3>
+<hr />
+<form method="post" >
+    <input class="form-control" type="text" name="Search" placeholder="Şehir adı giriniz" />
+    <button type="submit" class="btn btn-primary my-3">Ara</button>
+</form>
+
+@if(Model != null)
+            {
+<input type="text" class="form-control" value="@Model.dest_id" />
+            }
+<a href="/BookingByCity/Index/" class="btn btn-dark mt-3">Yeni Otel Rezervasyon Bilgisi</a>

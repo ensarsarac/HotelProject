@@ -1,0 +1,43 @@
+﻿
+@model UpdateStaffViewModel
+
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Personel Güncelle</h4>
+        <div class="basic-form">
+            <form method="post">
+                <input type="hidden" asp-for="@Model.StaffID" />
+                <div class="form-group">
+                    <label asp-for="@Model.Name"></label>
+                    <input type="text" asp-for="@Model.Name" class="form-control input-default">
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Title"></label>
+                    <input type="text" asp-for="@Model.Title" class="form-control input-default">
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.SocialMedia1"></label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.SocialMedia1">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.SocialMedia2"></label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.SocialMedia2">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.SocialMedia3"></label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.SocialMedia3">
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

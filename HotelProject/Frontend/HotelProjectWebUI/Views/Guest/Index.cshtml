@@ -1,0 +1,49 @@
+﻿
+@model List<ResultGuestDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <h4>Misafir Listesi</h4>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Şehir</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.GuestID</th>
+                            <td>@item.Name</td>
+                            <td>@item.Surname</td>
+                            <td>@item.City</td>
+                            <td><a href="/Guest/DeleteGuest/@item.GuestID" class="btn btn-rounded btn-outline-danger">Sil</a></td>
+                            <td><a href="/Guest/UpdateGuest/@item.GuestID" class="btn btn-rounded btn-outline-success">Güncelle</a></td>
+
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="/Guest/AddGuest/" class="btn btn-rounded btn-outline-info">Yeni Misafir Ekle</a>

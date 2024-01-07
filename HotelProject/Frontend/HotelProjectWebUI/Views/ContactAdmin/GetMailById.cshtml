@@ -1,0 +1,93 @@
+﻿
+@model ResultContactDto
+
+@{
+    ViewData["Title"] = "GetMailById";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="email-left-box">
+                        <a href="/ContactAdmin/AddSendMessage/" class="btn btn-primary btn-block">Yeni Mesaj Oluştur</a>
+                        @await Html.PartialAsync("/Views/ContactAdmin/SideBarAdminContactPartial.cshtml")
+                        @await Html.PartialAsync("/Views/ContactAdmin/SideBarAdminContactCategoryPartial.cshtml")
+                    </div>
+                    <div class="email-right-box">
+                        <div class="toolbar" role="toolbar">
+                            <div class="btn-group m-b-20">
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-archive"></i>
+                                </button>
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </button>
+                                <button type="button" class="btn btn-light">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                            <div class="btn-group m-b-20">
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-folder"></i>  <b class="caret m-l-5"></b>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript: void(0);">Social</a>  <a class="dropdown-item" href="javascript: void(0);">Promotions</a>  <a class="dropdown-item" href="javascript: void(0);">Updates</a>
+                                    <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+                                </div>
+                            </div>
+                            <div class="btn-group m-b-20">
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-tag"></i>  <b class="caret m-l-5"></b>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript: void(0);">Updates</a>  <a class="dropdown-item" href="javascript: void(0);">Promotions</a>
+                                    <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+                                </div>
+                            </div>
+                            <div class="btn-group m-b-20">
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                                    More <span class="caret m-l-5"></span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript: void(0);">Mark as Unread</a>  <a class="dropdown-item" href="javascript: void(0);">Add to Tasks</a>  <a class="dropdown-item"
+                                                                                                                                                                                       href="javascript: void(0);">Add Star</a>  <a class="dropdown-item" href="javascript: void(0);">Mute</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="read-content">
+                            <div class="media pt-5">
+                                <div class="media-body">
+                                    <h3 class="m-b-3">Gönderen:</h3>
+                                    <hr />
+                                    <h5 class="m-b-3">@Model.Name</h5>
+                                    <p class="m-b-3">@Model.Mail</p>
+                                    <p class="m-b-2">@Model.Date.ToShortDateString()</p>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="media mb-4 mt-1">
+                                <div class="media-body">
+                                    <span class="float-right">@Model.Date.ToShortTimeString()</span>
+                                    <h4 class="m-0 text-primary">@Model.Subject</h4>
+                                </div>
+                            </div>
+                            <p> @Model.Message</p>
+                            <hr>                            
+                           
+                            <div class="form-group p-t-15">
+                                <textarea class="w-100 p-20 l-border-1" name="" id="" cols="30" rows="5" placeholder="It's really an amazing.I want to know more about it..!"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-primaryw-md m-b-30" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Ensar\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Ensar\\.nuget\\packages",
+      "C:\\Program Files\\DevExpress 23.1\\Components\\Offline Packages"
+    ]
+  }
+}

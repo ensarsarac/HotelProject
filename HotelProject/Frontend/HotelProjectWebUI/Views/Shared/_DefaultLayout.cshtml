@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("HeadPartial")
+
+<body>
+    <div class="container-fluid bg-white p-0">
+        <!-- Spinner Start -->
+        @await Component.InvokeAsync("SpinnerPartial")
+        @await Component.InvokeAsync("HeaderPartial")
+        @RenderSection("Banner", true)
+        @RenderBody()
+        @await Html.PartialAsync("/Views/Default/NewsletterPartial.cshtml")
+        @await Component.InvokeAsync("FooterPartial")
+
+    </div>
+
+    @await Component.InvokeAsync("ScriptPartial")
+</body>
+
+</html>

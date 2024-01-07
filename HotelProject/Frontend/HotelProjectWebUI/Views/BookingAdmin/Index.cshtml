@@ -1,0 +1,94 @@
+﻿
+@model List<ResultBookingDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <h4>Referans Listesi</h4>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Rez. Sahibi</th>
+                        <th>Mail Adresi</th>
+                        <th>Giriş Tarihi</th>
+                        <th>Çıkış Tarihi</th>
+                        <th>Durum</th>
+                        <th>Onayla</th>
+                        <th>İptal Et</th>
+                        <th>Beklet</th>
+                        <th>Güncelle</th>
+                        <th>Detaylar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.BookingID</th>
+                            <th>@item.Name</th>
+                            <td>@item.Mail</td>
+                            <td>@item.CheckIn.ToString("dd-MMM-yyyy")</td>
+                            <td>@item.CheckOut.ToString("dd-MMM-yyyy")</td>
+                            @if (item.Status == "Onay Bekliyor")
+                            {
+                                <td><span class="badge bg-primary" style="color:white;">@item.Status</span></td>
+                            }
+                            else if (item.Status == "Onaylandı")
+                            {
+                                <td><span class="badge bg-success" style="color:white;">@item.Status</span></td>
+                            }
+                            else if (item.Status == "İptal Edildi")
+                            {
+                                <td><span class="badge bg-danger" style="color:white;">@item.Status</span></td>
+                            }
+                            <td><a href="/BookingAdmin/ApprovedReservation/@item.BookingID" class="btn btn-rounded btn-outline-info">Onay Ver</a></td>
+                            <td><a href="/BookingAdmin/CanceledReservation/@item.BookingID" class="btn btn-rounded btn-outline-danger">İptal Et</a></td>
+                            <td><a href="/BookingAdmin/WaitingReservation/@item.BookingID" class="btn btn-rounded btn-outline-warning">Beklet</a></td>
+                            <td><a href="/Testimonial/UpdateTestimonial/@item.BookingID" class="btn btn-rounded btn-outline-success">Güncelle</a></td>
+                            <td><a href="" data-toggle="modal" data-target="#Modal1-@item.BookingID" class="btn btn-rounded btn-outline-dark">Detaylar</a></td>
+
+                        </tr>
+                        <div class="modal" id="Modal1-@item.BookingID" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Rezervasyon Bilgileri</h5>
+                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h4>@item.Name</h4>
+                                        <hr />
+                                        <h5>@item.Room.Title</h5>
+                                        <hr />
+                                        <p>Giriş: @item.CheckIn.ToString("dd-MMM-yyyy")</p>
+                                        <p>Çıkış: @item.CheckOut.ToString("dd-MMM-yyyy")</p>
+                                        <p>Çocuk Sayısı: @item.ChildCount</p>
+                                        <p>Yetişkin Sayısı: @item.AdultCount</p>
+                                        <hr />
+                                        <p>Özel İstek: @item.SpecialRequest</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

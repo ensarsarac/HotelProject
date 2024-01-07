@@ -1,0 +1,23 @@
+﻿
+@model HotelProjectEntityLayer.Concrete.AppRole
+
+@{
+    ViewData["Title"] = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">
+            <h4>Rol Güncelle</h4>
+        </div>
+        <div class="table-responsive">
+            <form method="post" action="/Role/UpdateRole/">
+                <input type="hidden" asp-for="@Model.Id" />
+                <input type="text" asp-for="@Model.Name" placeholder="Rol Adı" class="form-control mb-3" required />
+                <button type="submit" class="btn btn-primary">Rol Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,52 @@
+﻿
+@model UpdateRoomDto
+
+@{
+    ViewData["Title"] = "AddStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Oda Güncelle</h4>
+        <div class="basic-form">
+            <form method="post">
+                <input type="hidden" asp-for="@Model.RoomID" />
+                <div class="form-group">
+                    <label>Oda Numarası</label>
+                    <input type="text" asp-for="@Model.RoomNumber" class="form-control input-default">
+                    <span asp-validation-for="@Model.RoomNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Oda Tipi</label>
+                    <input type="text" asp-for="@Model.Title" class="form-control input-default">
+                    <span asp-validation-for="@Model.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Fiyat</label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.Price">
+                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Yatak Sayısı</label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.BedCount">
+                    <span asp-validation-for="@Model.BedCount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Banyo Sayısı</label>
+                    <input type="text" class="form-control input-default" asp-for="@Model.BathCount">
+                    <span asp-validation-for="@Model.BathCount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Açıklama</label>
+                    <textarea class="form-control" cols="10" rows="7" asp-for="@Model.Description"></textarea>
+                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

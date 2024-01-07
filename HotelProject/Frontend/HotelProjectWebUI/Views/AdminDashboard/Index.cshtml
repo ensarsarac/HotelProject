@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+    @await Component.InvokeAsync("WidgetDashboardPartial")
+    @await Component.InvokeAsync("DashboardStaff")
+    @await Component.InvokeAsync("DashboardBooking")    
+    @await Html.PartialAsync("/Views/AdminDashboard/DashboardSocialMedia.cshtml")   
+
+    
+
+
+
+    
+
+
+
+
+
