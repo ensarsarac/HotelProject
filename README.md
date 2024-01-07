@@ -76,6 +76,7 @@
 </ul>
 
 ![Ekran görüntüsü 2024-01-07 142222](https://github.com/ensarsarac/HotelProject/assets/76907308/488f89cf-62a2-4b55-8870-15037ef7ea6b)
+![Ekran görüntüsü 2024-01-07 143034](https://github.com/ensarsarac/HotelProject/assets/76907308/bb585f22-3270-441d-91ff-9024f8cdd7bc)
 ![Ekran görüntüsü 2024-01-07 142535](https://github.com/ensarsarac/HotelProject/assets/76907308/46d3827b-d22b-4803-87ac-6d616d88b67c)
 ![Ekran görüntüsü 2024-01-07 142500](https://github.com/ensarsarac/HotelProject/assets/76907308/7afecc09-2637-4968-85cc-1a1bc0d718ef)
 ![Ekran görüntüsü 2024-01-07 142446](https://github.com/ensarsarac/HotelProject/assets/76907308/1b5ca2df-0592-4184-9f80-dc26d5a1b770)
